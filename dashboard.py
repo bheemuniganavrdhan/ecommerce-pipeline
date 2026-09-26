@@ -6,7 +6,7 @@ import time
 
 st.set_page_config(page_title="E-Commerce Stream Monitor", layout="wide")
 
-DB_CONN_STR = "postgresql+psycopg://admin:adminpassword@localhost:5432/ecommerce_dw"
+DB_CONN_STR ="postgresql://neondb_owner:npg_3O6LZYUjGiJg@ep-bitter-waterfall-b40sfr9w.c-6.us-east-2.aws.neon.tech/neondb?sslmode=require&channel_binding=require"
 
 @st.cache_resource
 def get_db_engine():
