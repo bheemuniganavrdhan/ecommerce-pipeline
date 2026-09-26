@@ -7,9 +7,7 @@ from kafka import KafkaConsumer
 from sqlalchemy import create_engine
 
 # Database Connection
-POSTGRES_URL = "postgresql://neondb_owner:npg_3O6LZYUjGiJg@ep-bitter-waterfall-b40sfr9w.c-6.us-east-2.aws.neon.tech/neondb?sslmode=require&channel_binding=require"
-engine = create_engine(POSTGRES_URL)
-
+POSTGRES_URL = "postgresql+psycopg2://neondb_owner:npg_0vicIyX4lPVe@ep-bitter-waterfall-b40sfr9w.c-6.us-east-2.aws.neon.tech/neondb?sslmode=require"
 def get_kafka_consumer():
     return KafkaConsumer(
         "ecommerce-events",

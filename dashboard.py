@@ -3,10 +3,9 @@ import pandas as pd
 from sqlalchemy import create_engine
 import plotly.express as px
 import time
-
 st.set_page_config(page_title="E-Commerce Stream Monitor", layout="wide")
-
-DB_CONN_STR ="postgresql://neondb_owner:npg_3O6LZYUjGiJg@ep-bitter-waterfall-b40sfr9w.c-6.us-east-2.aws.neon.tech/neondb?sslmode=require&channel_binding=require"
+postgresql
+DB_CONN_STR = "postgresql+psycopg2://neondb_owner:npg_0vicIyX4lPVe@ep-bitter-waterfall-b40sfr9w.c-6.us-east-2.aws.neon.tech/neondb?sslmode=require"
 
 @st.cache_resource
 def get_db_engine():
@@ -23,6 +22,7 @@ def load_data():
         """
         return pd.read_sql(query, con=engine)
     except Exception as e:
+        st.error(f"DB Error:{e}")
         return pd.DataFrame()
 
 st.title("🛒 Large-Scale E-Commerce Telemetry Pipeline")
