@@ -4,9 +4,7 @@ from sqlalchemy import create_engine
 import plotly.express as px
 import time
 st.set_page_config(page_title="E-Commerce Stream Monitor", layout="wide")
-postgresql
 DB_CONN_STR = "postgresql+psycopg2://neondb_owner:npg_0vicIyX4lPVe@ep-bitter-waterfall-b40sfr9w.c-6.us-east-2.aws.neon.tech/neondb?sslmode=require"
-
 @st.cache_resource
 def get_db_engine():
     return create_engine(DB_CONN_STR)
